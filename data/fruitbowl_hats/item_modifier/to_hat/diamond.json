@@ -1,0 +1,38 @@
+[
+  {
+    "function": "minecraft:set_item",
+    "item": "minecraft:stone_button"
+  },
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:equippable": {
+        "slot": "head",
+        "equip_sound": "minecraft:item.armor.equip_diamond"
+      }
+    }
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": "{fruitbowl_hat:1b,CustomRoleplayData:1b,original:\"diamond_helmet\"}"
+  },
+  {
+    "function": "minecraft:set_attributes",
+    "modifiers": [
+      {
+        "attribute": "minecraft:armor",
+        "id": "fruitbowl:hat_armor",
+        "amount": 3.0,
+        "operation": "add_value",
+        "slot": "head"
+      },
+      {
+        "attribute": "minecraft:armor_toughness",
+        "id": "fruitbowl:hat_toughness",
+        "amount": 2.0,
+        "operation": "add_value",
+        "slot": "head"
+      }
+    ]
+  }
+]

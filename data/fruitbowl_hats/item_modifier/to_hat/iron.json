@@ -1,0 +1,31 @@
+[
+  {
+    "function": "minecraft:set_item",
+    "item": "minecraft:stone_button"
+  },
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:equippable": {
+        "slot": "head",
+        "equip_sound": "minecraft:item.armor.equip_iron"
+      }
+    }
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": "{fruitbowl_hat:1b,CustomRoleplayData:1b,original:\"iron_helmet\"}"
+  },
+  {
+    "function": "minecraft:set_attributes",
+    "modifiers": [
+      {
+        "attribute": "minecraft:armor",
+        "id": "fruitbowl:hat_armor",
+        "amount": 2.0,
+        "operation": "add_value",
+        "slot": "head"
+      }
+    ]
+  }
+]
