@@ -1,6 +1,16 @@
 # Fruitbowl Hats v2
 
 A datapack for Minecraft 1.21.11 (Fabric) that renders 3D custom models on helmets when they have a CustomModelData value set.
+## Usage
+
+Run: 
+`/trigger CustomModelData set x`
+To apply a model to any helmet 
+The just wear it and the datapack will do the rest.
+Optionally toggle the enchantment glint using:
+
+- `/trigger glint set 1` — **Disable** enchantment glint on held item
+- `/trigger glint set 2` — **Enable** (restore) enchantment glint on held item
 
 ## How It Works
 
@@ -26,11 +36,6 @@ No commands needed — just equip a helmet and set its CMD with `/trigger Custom
 
 To revert, set CMD back to 0: `/trigger CustomModelData set 0`
 
-### Glint Toggle
-Remove or restore the enchantment glint on any held item:
-
-- `/trigger glint set 1` — **Disable** enchantment glint on held item
-- `/trigger glint set 2` — **Enable** (restore) enchantment glint on held item
 
 ## File Structure
 
