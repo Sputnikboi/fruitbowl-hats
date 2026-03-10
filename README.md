@@ -6,8 +6,9 @@ A datapack for Minecraft 1.21.11 (Fabric) that renders 3D custom models on helme
 Run: 
 `/trigger CustomModelData set x` 
 
-To apply a model to any helmet 
-Then just wear it and the datapack will do the rest.
+To apply a model to any helmet. 
+Then just wear it and the datapack will do the rest. 
+
 Optionally toggle the enchantment glint using:
 
 - `/trigger glint set 1` — **Disable** enchantment glint on held item
