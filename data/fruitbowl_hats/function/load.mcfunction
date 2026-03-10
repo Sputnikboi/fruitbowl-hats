@@ -1,4 +1,3 @@
-# Fruitbowl Hat System - Initialize
-scoreboard objectives add fb.cmd dummy
-scoreboard objectives add restore_hat trigger
-tellraw @a [{"text":"[Fruitbowl Hats] ","color":"gold"},{"text":"Hat system loaded! Set CMD on a helmet to wear 3D hats with armor stats.","color":"yellow"}]
+# Fruitbowl Hats v2 - Armor stand shuttle approach
+# Helmets keep their item type, durability, and enchantments
+tellraw @a [{"text":"[Fruitbowl Hats v2]","color":"gold"},{"text":" Loaded! Helmets with CustomModelData will display 3D models.","color":"yellow"}]

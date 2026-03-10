@@ -1,20 +1,14 @@
-# Skip if already wearing a fruitbowl hat
-execute if items entity @s armor.head minecraft:stone_button[custom_data~{fruitbowl_hat:true}] run return 0
-
-# Skip if no item in head slot
+# Skip if nothing in head slot
 execute unless items entity @s armor.head * run return 0
 
-# Skip if no custom_model_data at all
-execute unless items entity @s armor.head *[custom_model_data~{}] run return 0
+# Skip if not a helmet
+execute unless items entity @s armor.head #fruitbowl_hats:helmets run return 0
 
-# Skip if CMD is 0 (default/no custom model)
-execute if items entity @s armor.head *[custom_model_data={floats:[0.0f]}] run return 0
+# CASE 1: Helmet has CMD and is NOT yet processed → apply
+execute if items entity @s armor.head *[custom_model_data~{}] unless items entity @s armor.head *[custom_data~{fruitbowl_hat:true}] run function fruitbowl_hats:apply
 
-# Swap based on helmet type
-execute if items entity @s armor.head minecraft:leather_helmet run item modify entity @s armor.head fruitbowl_hats:to_hat/leather
-execute if items entity @s armor.head minecraft:chainmail_helmet run item modify entity @s armor.head fruitbowl_hats:to_hat/chainmail
-execute if items entity @s armor.head minecraft:iron_helmet run item modify entity @s armor.head fruitbowl_hats:to_hat/iron
-execute if items entity @s armor.head minecraft:golden_helmet run item modify entity @s armor.head fruitbowl_hats:to_hat/golden
-execute if items entity @s armor.head minecraft:diamond_helmet run item modify entity @s armor.head fruitbowl_hats:to_hat/diamond
-execute if items entity @s armor.head minecraft:netherite_helmet run item modify entity @s armor.head fruitbowl_hats:to_hat/netherite
-execute if items entity @s armor.head minecraft:turtle_helmet run item modify entity @s armor.head fruitbowl_hats:to_hat/turtle
+# CASE 2: Already processed - check if CMD changed
+execute if items entity @s armor.head *[custom_data~{fruitbowl_hat:true}] run function fruitbowl_hats:check_update
+
+# CASE 3: Processed hat but CMD was removed (shouldn't normally happen, but safety net)
+# This is handled inside check_update
